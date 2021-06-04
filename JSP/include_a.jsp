@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" info ="지시자충돌"%>
-    <% String test ="공통코드를 사용하는 페이지의 선언된 변수"; %>
+    pageEncoding="UTF-8" info="공통디자인을 사용해야할 페이지"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=" UTF-8">
+<meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title></title>
+ <!-- bootstrap -->
+ <link href="http://localhost/jsp_prj/common/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
 
-
-<%@ include file = "include_b.jsp" %>
+ <!-- jQuery CDN(Contents Delivery Network) -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+ <script src="http://localhost/jsp_prj/common/bootstrap-3.3.2/js/bootstrap.min.js"></script>
 <style type="text/css">
 
 </style>
@@ -20,14 +22,14 @@
 </head>
 <body>
 <div>
-<div class="alert alert-danger" role="alert">
- A : 공통로직을 사용하는 JSP페이지
+외부페이지
+<div><!-- 공통디자인이 필요한 부분 -->
+<jsp:include page="include_b.jsp"/>
 </div>
-<div class="alert alert-info" role="alert">
- 이름 : <strong><%= name %></strong><br/>
- 메시지 : <strong><%= method() %></strong>
-</div>
-
+<%-- include directive와 다르게 소스와 instance가 각각 만들어지기 때문에 
+	변수나 method의 공유가 되지 않으며, page directive의 충돌이 발생하지 않는다
+	 <%= name %> --%>
+외부페이지
 </div>
 </body>
 </html>
