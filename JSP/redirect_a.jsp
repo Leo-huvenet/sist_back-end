@@ -1,5 +1,15 @@
+<%@page import="java.util.Random"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%
+ 	boolean flag = new Random().nextBoolean();
+ 	request.setAttribute("flag" ,flag);
+ %>
+ <c:if test="${ flag }"><!-- 로그인 후에만 존재하는 세션이 있는가? -->
+ <!-- 없다면 인증페이지로 이동 -->
+ 	<c:redirect url="redirect_b.jsp"/>
+ </c:if>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +33,6 @@
 </head>
 <body>
 <div>
-	<img src="../common/images/redirect.PNG"/>
 </div>
 </body>
 </html>

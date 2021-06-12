@@ -23,7 +23,10 @@
 </head>
 <body>
 <div>
-	<img src="../common/images/redirect.PNG"/>
+pageScope : <strong>${pageScope.pageName}</strong><br/>
+requestScope : <strong>${requestScope.reqName}</strong><br/>
+sessionScope : <strong>${sessionScope.sesName}</strong><br/>
+applicationScope : <strong>${applicationScope.appName}</strong><br/>
 </div>
 </body>
 </html>
